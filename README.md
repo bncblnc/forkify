@@ -1,4 +1,4 @@
-<h2 align="center"> 🍽 FORKIFY </h2>
+<div align="center"><img  alt="logo" height="100"  src="src/img/logo2.png"></div>
 <div>
     <p> App de culinária onde pode buscar e adicionar novas receitas.</p>
     <h3>💻 TECNOLOGIAS:</h3>
