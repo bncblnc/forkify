@@ -15,7 +15,7 @@
     </p>
 </div>
 
-<h3>▶ Como rodar:</h3>
+<div align="center"><h2>▶ Como rodar:</h2></div>
 <div>
     <p>Você pode rodar <a href="_">clicando aqui</a>.</p>
     <p>Ou então você vai precisar do node.js instalado. Abrir a pasta no Visual Code e no terminal realizar os comandos: <br/>
@@ -24,6 +24,7 @@
     Depois é só abrir o endereço dado no terminal no navegador<br/><br/></p>
 </div>
 <div>
+<h3>Para navegar:</h3>
     <p>🔎 Para buscar novas receitas digite o termo a ser buscado em inglês no campo de busca (ex.: "chicken", "avocado", "pizza", "tuna"...)</p>
     <p>📌 Para salvar a receita, clique no icon de marcador na página da própria receita. Após marcar, você pode acessá-la direto no "Bookmarks". Caso recarregue a página, suas receitas permanecerão salvas no localStorage do navegador.</p>
     <p>🗑 Para desmarcar as receitas do "Bookmarks" basta abrir a receita e clicar novamente no icon de marcador.</p>
