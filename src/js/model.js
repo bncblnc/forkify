@@ -32,7 +32,6 @@ export const loadRecipe = async function (id) {
   try {
     const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     state.recipe = createRecipeObject(data);
-    console.log(state.recipe);
 
     if (state.bookmarks.some(bookmark => bookmark.id === id))
       state.recipe.bookmarked = true;
@@ -114,19 +113,19 @@ const clearBookmarks = function () {
 export const uploadRecipe = async function (newRecipe) {
   try {
     let ingredients = [];
-    const ingredient = Object.entries(newRecipe).filter(
-      entry => entry[0].startsWith('ing') && entry[1] !== ''
+    const ing = Object.entries(newRecipe).filter(entry =>
+      entry[0].startsWith('ing')
     );
-    const totalIngredients = ingredient.length / 3;
+    const totalIngredients = ing.length / 3;
 
     for (let i = 0; i < totalIngredients; i++) {
-      let ind = i * 3;
+      let aux = i * 3;
       const newIngredient = {
-        quantity: +ingredient[ind][1],
-        unit: ingredient[ind + 1][1],
-        description: ingredient[ind + 2][1],
+        quantity: ing[aux][1] ? +ing[aux][1] : null,
+        unit: ing[aux + 1][1],
+        description: ing[aux + 2][1],
       };
-      ingredients.push(newIngredient);
+      if (newIngredient.description) ingredients.push(newIngredient);
     }
 
     // const ingredients = Object.entries(newRecipe).filter(
@@ -158,7 +157,6 @@ export const uploadRecipe = async function (newRecipe) {
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };
