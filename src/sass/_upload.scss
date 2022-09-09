@@ -52,7 +52,42 @@
     grid-template-columns: 1fr 2.8fr;
     align-items: center;
     gap: 1.5rem;
+  }
 
+  &__row {
+    align-items: center;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 1.5rem;
+
+    overflow-y: auto;
+
+    & input {
+      width: 10rem;
+      height: 3rem;
+    }
+  }
+
+  .btn__add {
+    padding-top: 5rem;
+    position: absolute;
+    right: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $color-primary;
+    font-weight: bolder;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+  }
+
+  & button:hover {
+    opacity: 80%;
+  }
+
+  &__form {
     & label {
       font-size: 1.5rem;
       font-weight: 600;
@@ -76,12 +111,6 @@
         background-color: $color-grey-light-1;
       }
     }
-
-    & button {
-      grid-column: 1 / span 2;
-      justify-self: center;
-      margin-top: 1rem;
-    }
   }
 
   &__heading {
@@ -93,7 +122,8 @@
   }
 
   &__btn {
-    grid-column: 1 / -1;
+    position: absolute;
+    bottom: 5%;
     justify-self: center;
   }
 }
