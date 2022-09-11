@@ -62,15 +62,32 @@ class AddRecipeView extends View {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
       const data = Object.fromEntries(dataArr);
+      console.log(data);
+      if (
+        !_validateInputs(
+          data.title,
+          data.sourceUrl,
+          data.image,
+          data.publisher,
+          data.cookingTime,
+          data.servings
+        )
+      )
+        return;
+
       handler(data);
     });
   }
 
   _clearListIngredients() {
-    let html = '';
-    this._ingNumber = 0;
+    let html = `
+    <label>Ingredient 1</label>
+    <input value="" name="ing1-quantity" placeholder="Quantity" />
+    <input value="" name="ing1-unit" placeholder="Unit" />
+    <input value="" name="ing1-description" required placeholder="Description" />`;
+    this._ingNumber = 1;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       html += `<label>Ingredient ${this._ingNumber + 1}</label>
       <input value="" name="ing${
         this._ingNumber + 1
@@ -83,13 +100,71 @@ class AddRecipeView extends View {
       }-description" placeholder="Description" />`;
 
       this._ingNumber++;
-
-      this._ingredientsList.innerHTML = '';
-      this._ingredientsList.insertAdjacentHTML('afterbegin', html);
     }
+
+    this._ingredientsList.innerHTML = '';
+    this._ingredientsList.insertAdjacentHTML('afterbegin', html);
   }
 
   _generateMarkup() {}
 }
 
 export default new AddRecipeView();
+
+///////////////////////////////////////////
+const titleInput = document.getElementById('title');
+const urlInput = document.getElementById('URL');
+const imgInput = document.getElementById('img');
+const publisherInput = document.getElementById('publisher');
+const prepTimeInput = document.getElementById('prepTime');
+const servingsInput = document.getElementById('servings');
+
+const _validateInputs = function (
+  title,
+  url,
+  imgUrl,
+  publisher,
+  prepTime,
+  servings
+) {
+  let control = true;
+
+  if (title.length < 3) {
+    titleInput.value = '';
+    titleInput.placeholder = '*Title must be at least 3 characters long';
+    control = false;
+  }
+
+  if (url.length < 5) {
+    urlInput.value = '';
+    urlInput.placeholder = '*URL must be at least 5 characters long';
+    control = false;
+  }
+
+  if (imgUrl.length < 5) {
+    imgInput.value = '';
+    imgInput.placeholder = '*Image must be at least 4 characters long';
+    control = false;
+  }
+
+  if (publisher.length < 5) {
+    publisherInput.value = '';
+    publisherInput.placeholder =
+      '*Publisher must be at least 4 characters long';
+    control = false;
+  }
+
+  if (prepTime < 1) {
+    prepTimeInput.value = '';
+    prepTimeInput.placeholder = '*Try a number greater than 1';
+    control = false;
+  }
+
+  if (servings < 1) {
+    servingsInput.value = '';
+    servingsInput.placeholder = '*Try a number greater than 1';
+    control = false;
+  }
+
+  return control;
+};
