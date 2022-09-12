@@ -25,11 +25,11 @@
 </div>
 <div>
 <h3>Para navegar:</h3>
-    <p>🔎 Para buscar novas receitas digite o termo a ser buscado em inglês no campo de busca (ex.: "chicken", "avocado", "pizza", "tuna"...)</p>
+    <p>🔎 Para buscar novas receitas digite o termo a ser buscado em inglês no campo de busca (ex.: "chicken", "avocado", "pizza", "tuna", ...).</p>
     <p>👨🏼‍🍳 Você pode aumentar ou diminuir a quantidade de "servings" clicando nos botões de + e -. A receita atualiza a quantia dos ingredientes para o preparo.</p>
     <p>📌 Para salvar a receita, clique no icon de marcador na página da própria receita. Após marcar, você pode acessá-la direto no "Bookmarks". Caso recarregue a página, suas receitas permanecerão salvas no localStorage do navegador.</p>
     <p>🗑 Para desmarcar as receitas do "Bookmarks" basta abrir a receita e clicar novamente no icon de marcador.</p>
-    <p>➕ Para adicionar uma nova receita, clique em "Add Recipe" e preencha o formulário com os dados necessários. Assim que a receita for registrada já será possível ver a página dela e também seu acesso pelo "Bookmarks". Se você usar a busca, ela também estará nos resultados com o icon que representa suas próprias criações. <a href="https://forkify-bncblnc.vercel.app/#631f3f692a527d0016705ae9">(exemplo)</a></p>
+    <p>➕ Para adicionar uma nova receita, clique em "Add Recipe" e preencha o formulário com os dados necessários. Assim que a receita for registrada já será possível ver a página dela e também seu acesso pelo "Bookmarks". Se você usar a busca, ela também estará nos resultados com o icon que representa suas próprias criações <a href="https://forkify-bncblnc.vercel.app/#631f3f692a527d0016705ae9">(exemplo)</a>.</p>
     <p>🥣 Todas as receitas também podem ser acessadas diretamente pelo link dela.</p>
     
 </div>
