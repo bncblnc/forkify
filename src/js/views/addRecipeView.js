@@ -26,6 +26,7 @@ class AddRecipeView extends View {
     this._window.classList.toggle('hidden');
 
     this._clearListIngredients();
+    clearInvalids(true);
   }
 
   _addHandlerShowWindow() {
@@ -183,7 +184,12 @@ const _validateInputs = function (
   return control;
 };
 
-const clearInvalids = function () {
+const clearInvalids = function (clearvalue = false) {
+  // prettier-ignore
+  titleInput.placeholder = urlInput.placeholder = imgInput.placeholder = publisherInput.placeholder = prepTimeInput.placeholder = servingsInput.placeholder = '';
+  // prettier-ignore
+  if(clearvalue) titleInput.value = urlInput.value = imgInput.value = publisherInput.value = prepTimeInput.value = servingsInput.value = '';
+
   titleInput.classList.remove('invalid');
   urlInput.classList.remove('invalid');
   imgInput.classList.remove('invalid');
