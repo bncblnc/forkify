@@ -43,17 +43,23 @@ class AddRecipeView extends View {
 
   _addIngredient(e) {
     e.preventDefault();
+    if (!validateIng(this._ingNumber)) return;
+
     const html = `
     <label>Ingredient ${this._ingNumber + 1}</label>
     <input value="" name="ing${
       this._ingNumber + 1
-    }-quantity" placeholder="Quantity" />
+    }-quantity" placeholder="Quantity" id="quantity${this._ingNumber + 1}"/>
     <input value="" name="ing${this._ingNumber + 1}-unit" placeholder="Unit" />
     <input value="" name="ing${
       this._ingNumber + 1
-    }-description" placeholder="Description" />`;
+    }-description" placeholder="Description" id="description${
+      this._ingNumber + 1
+    }"/>`;
 
     this._ingredientsList.insertAdjacentHTML('beforeend', html);
+    const el = document.getElementById(`quantity${this._ingNumber + 1}`);
+    el.focus();
     this._ingNumber++;
   }
 
@@ -83,7 +89,7 @@ class AddRecipeView extends View {
     <label>Ingredient 1</label>
     <input value="" name="ing1-quantity" placeholder="Quantity" />
     <input value="" name="ing1-unit" placeholder="Unit" />
-    <input value="" name="ing1-description" required placeholder="Description" />`;
+    <input value="" name="ing1-description" required placeholder="Description" id="description1"/>`;
     this._ingNumber = 1;
 
     for (let i = 0; i < 4; i++) {
@@ -96,7 +102,9 @@ class AddRecipeView extends View {
       }-unit" placeholder="Unit" />
       <input value="" name="ing${
         this._ingNumber + 1
-      }-description" placeholder="Description" />`;
+      }-description" placeholder="Description"  id="description${
+        this._ingNumber + 1
+      }" />`;
 
       this._ingNumber++;
     }
@@ -182,4 +190,25 @@ const clearInvalids = function () {
   publisherInput.classList.remove('invalid');
   prepTimeInput.classList.remove('invalid');
   servingsInput.classList.remove('invalid');
+};
+
+const validateIng = function (totalIng) {
+  let control = true;
+  let elementsIng = [];
+
+  for (let i = 1; i <= totalIng; i++) {
+    const domElement = document.getElementById(`description${i}`);
+    elementsIng.push(domElement);
+  }
+
+  elementsIng.forEach(el => {
+    if (el.value === '') {
+      el.classList.add('invalid');
+      control = false;
+    } else {
+      el.classList.remove('invalid');
+    }
+  });
+
+  return control;
 };

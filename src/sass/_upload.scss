@@ -54,6 +54,12 @@
     grid-template-columns: 1fr 2.8fr;
     align-items: center;
     gap: 1.5rem;
+
+    & input {
+      &::placeholder {
+        color: #f34431b4;
+      }
+    }
   }
 
   &__row {
@@ -132,8 +138,4 @@
 
 .invalid {
   background-color: $color-grey-light-2;
-
-  &::placeholder {
-    color: #f34431b4;
-  }
 }
