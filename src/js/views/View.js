@@ -2,6 +2,7 @@ import icons from 'url:../../img/icons.svg';
 
 export default class View {
   _data;
+  _parentElement;
 
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
