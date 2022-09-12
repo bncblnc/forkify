@@ -1,4 +1,4 @@
-<div align="center"><img  alt="logo" height="100"  src="src/img/logo2.png"></div>
+<div align="center"><img  alt="logo" height="70"  src="src/img/logo2.png"></div>
 <div>
     <p> App de culinária onde é possível buscar receitas já cadastradas, salvar suas preferidas em seu livro de receitas e adicionar novas receitas.</p>
     <h3>💻 TECNOLOGIAS:</h3>
