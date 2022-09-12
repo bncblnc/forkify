@@ -62,7 +62,6 @@ class AddRecipeView extends View {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
       const data = Object.fromEntries(dataArr);
-      console.log(data);
       if (
         !_validateInputs(
           data.title,
@@ -127,28 +126,33 @@ const _validateInputs = function (
   prepTime,
   servings
 ) {
+  clearInvalids();
   let control = true;
 
   if (title.length < 3) {
     titleInput.value = '';
+    titleInput.classList.add('invalid');
     titleInput.placeholder = '*Title must be at least 3 characters long';
     control = false;
   }
 
   if (url.length < 5) {
     urlInput.value = '';
+    urlInput.classList.add('invalid');
     urlInput.placeholder = '*URL must be at least 5 characters long';
     control = false;
   }
 
   if (imgUrl.length < 5) {
     imgInput.value = '';
+    imgInput.classList.add('invalid');
     imgInput.placeholder = '*Image must be at least 4 characters long';
     control = false;
   }
 
   if (publisher.length < 5) {
     publisherInput.value = '';
+    publisherInput.classList.add('invalid');
     publisherInput.placeholder =
       '*Publisher must be at least 4 characters long';
     control = false;
@@ -156,15 +160,26 @@ const _validateInputs = function (
 
   if (prepTime < 1) {
     prepTimeInput.value = '';
-    prepTimeInput.placeholder = '*Try a number greater than 1';
+    prepTimeInput.classList.add('invalid');
+    prepTimeInput.placeholder = '*Try a number greater than 0';
     control = false;
   }
 
   if (servings < 1) {
     servingsInput.value = '';
-    servingsInput.placeholder = '*Try a number greater than 1';
+    servingsInput.classList.add('invalid');
+    servingsInput.placeholder = '*Try a number greater than 0';
     control = false;
   }
 
   return control;
+};
+
+const clearInvalids = function () {
+  titleInput.classList.remove('invalid');
+  urlInput.classList.remove('invalid');
+  imgInput.classList.remove('invalid');
+  publisherInput.classList.remove('invalid');
+  prepTimeInput.classList.remove('invalid');
+  servingsInput.classList.remove('invalid');
 };

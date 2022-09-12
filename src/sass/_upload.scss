@@ -70,6 +70,9 @@
     & input {
       width: 10rem;
       height: 3rem;
+      &::placeholder {
+        color: $color-grey-light-3;
+      }
     }
   }
 
@@ -104,10 +107,6 @@
       border-radius: 0.5rem;
       transition: all 0.2s;
 
-      &::placeholder {
-        color: $color-grey-light-3;
-      }
-
       &:focus {
         outline: none;
         border: 1px solid $color-primary;
@@ -128,5 +127,13 @@
     position: absolute;
     bottom: 5%;
     justify-self: center;
+  }
+}
+
+.invalid {
+  background-color: $color-grey-light-2;
+
+  &::placeholder {
+    color: #f34431b4;
   }
 }
