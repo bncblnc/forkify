@@ -17,7 +17,7 @@
 
 <div align="center"><h2>▶ Como rodar:</h2></div>
 <div>
-    <p>Você pode rodar <a href="https://forkify-bncblnc.vercel.app/">clicando aqui</a>.</p>
+    <p>Você pode rodar <a href="https://forkify-bncblnc.vercel.app/" target="_blank">clicando aqui</a>.</p>
     <p>Ou então você vai precisar do node.js instalado. Abrir a pasta no Visual Code e no terminal realizar os comandos: <br/>
     🔸 npm i<br/>
     🔸 npm start<br/>
