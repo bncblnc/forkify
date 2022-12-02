@@ -30,7 +30,7 @@
     <p>🥣 Todas as receitas também podem ser acessadas diretamente pelo link dela.</p>
     
 </div>
-
+<hr>
 <div align="center">
     <a href="https://github.com/bncblnc"><img height="80" src="https://avatars.githubusercontent.com/u/108829137?v=4"></a>
    <br/><a href="https://www.linkedin.com/in/bncblnc/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
